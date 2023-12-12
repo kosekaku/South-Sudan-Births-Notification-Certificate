@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import QRCode from "qrcode.react";
 import { attributesData } from "../../helpers/attributesData";
+import { serverURL } from "../../config/api";
 
 const CertificateQrcCode = ({ data }) => {
   if (!data) return <p>undefined</p>;
@@ -20,6 +21,8 @@ const CertificateQrcCode = ({ data }) => {
   const url = window.location.origin;
 
   const checkUndefined = (data) => (data ? data : "");
+
+  const server = serverURL(url);
 
   return (
     <div>
@@ -41,7 +44,7 @@ const CertificateQrcCode = ({ data }) => {
           bgColor={"#ffffff"}
           fgColor={"#000000"}
           imageSettings={{
-            src: "/ministry.jpg",
+            src: `${server}/ministry.jpg`,
             x: null,
             y: null,
             height: 24,

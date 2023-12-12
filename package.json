@@ -1,14 +1,15 @@
 {
   "name": "births-certificate",
   "version": "1.0.0",
-  "description": "",
+  "description": "South Sudan Births Notification Certificate Custom App for printing births certificates",
   "license": "BSD-3-Clause",
   "private": true,
   "scripts": {
     "build": "d2-app-scripts build",
     "start": "d2-app-scripts start",
     "test": "d2-app-scripts test",
-    "deploy": "d2-app-scripts deploy"
+    "deploy": "d2-app-scripts deploy",
+    "prod": "sudo rm -r .d2 build && yarn build"
   },
   "devDependencies": {
     "@dhis2/cli-app-scripts": "^10.3.10"
@@ -21,5 +22,9 @@
     "react-router-dom": "^6.20.1",
     "react-to-print": "^2.14.15",
     "styled-components": "^6.1.1"
+  },
+  "author": {
+    "name": "Kose | HISP South Sudan",
+    "url": "https://hispsouthsudan.org"
   }
 }

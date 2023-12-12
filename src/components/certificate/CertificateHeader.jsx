@@ -1,7 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
-
+import { APP_NAME, serverURL } from "../../config/api";
+// import { SERVER_URL } from "../../config/api";
 /**
  * Component representing the header section of the certificate.
  *
@@ -9,11 +9,12 @@ import styled from "styled-components";
  * @returns {JSX.Element} - The rendered CertificateHeader component.
  */
 const CertificateHeader = () => {
+  const server = serverURL(window.location.origin);
   return (
     <div>
       <CertificateHeaderWrapper>
         <LogoContainer>
-          <Image src="/flag.webp" alt="South Sudan Flag logo" />
+          <Image src={`${server}/flag.webp`} alt="South Sudan Flag logo" />
         </LogoContainer>
 
         <TextContainer>
@@ -23,7 +24,7 @@ const CertificateHeader = () => {
         </TextContainer>
 
         <MinistryLogoContainer>
-          <Image src="/ministry.jpg" alt="Ministry of Health logo" />
+          <Image src={`${server}/ministry.jpg`} alt="Ministry of Health logo" />
         </MinistryLogoContainer>
       </CertificateHeaderWrapper>
     </div>
